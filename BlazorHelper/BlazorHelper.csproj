@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+    <PropertyGroup>
+        <PackageId>BlazorHelper</PackageId>
+        <Version>1.0.0</Version>
+        <Authors>litch0</Authors>
+        <PackageTags>Blazor;Javascript;JavascriptInterop</PackageTags>
+        <Description>
+        This client library enables working with Jquery and the DOM with Blazor in a modular way see more in https://github.com/litch0/BlazorHelpers
+        you can choose to work with Jquery and DOM individually or in groups using both
+        This library can be used for example to add elements to a div without additions to a list (only text in html) see more in the example of the repo: https://github.com/litch0/BlazorHelpers
+        </Description>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <RazorLangVersion>3.0</RazorLangVersion>
+        <RootNamespace>BlazorHelper</RootNamespace>
+    </PropertyGroup>
+
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Components" Version="3.1.8" />
+        <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="3.1.8" />
+    </ItemGroup>
+
+</Project>
