@@ -1,6 +1,12 @@
 # BlazorHelpers
 Helpers to interact with javascript apis with blazor
 
+## Documentation Here
+[Go to Documentation]()
+
+## instalation
+Nuguet: 
+
 ## How to use?
 in the `_layour.cshtml` or `index.html` add the following scripts depending on what you want to do:
 ```HTML
