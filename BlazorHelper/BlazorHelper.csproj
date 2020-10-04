@@ -3,7 +3,10 @@
     <PropertyGroup>
         <PackageId>BlazorHelper</PackageId>
         <Version>1.0.0</Version>
-        <Authors>litch0</Authors>
+        <Authors>litch0|lmtr</Authors>
+        <PackageProjectUrl>https://github.com/litch0/BlazorHelpers</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/litch0/BlazorHelpers/blob/main/LICENSE</PackageLicenseUrl>
+        <Copyright>Copyright (c) 2020 litch0|lmtr</Copyright>
         <PackageTags>Blazor;Javascript;JavascriptInterop</PackageTags>
         <Description>
         This client library enables working with Jquery and the DOM with Blazor in a modular way see more in https://github.com/litch0/BlazorHelpers
