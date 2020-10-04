@@ -5,7 +5,7 @@ Helpers to interact with javascript apis with blazor
 [Go to Documentation]()
 
 ## instalation
-Nuguet: 
+Nuguet: https://www.nuget.org/packages/litch0.BlazorHelper/
 
 ## How to use?
 in the `_layour.cshtml` or `index.html` add the following scripts depending on what you want to do:
