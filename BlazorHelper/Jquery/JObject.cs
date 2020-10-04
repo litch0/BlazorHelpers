@@ -13,7 +13,6 @@ namespace BlazorHelper
         {
             _runtime = runtime;
             Selector = selector;
-            _runtime.InvokeVoidAsync("console.log", "hello wolrd from function dotnet helper");
         }
 
         public JObject CreateElement(string elementName, string id)
@@ -28,16 +27,9 @@ namespace BlazorHelper
         public string GetAttr(string attr) => _runtime.InvokeAsync<string>(BHList.Attr, this.Selector, attr).Result;
         public string GetCss(string property) => _runtime.InvokeAsync<string>(BHList.Css, this.Selector, property).Result;
 
-        public void SetHtml(string html)
-        {
-            _runtime.InvokeVoidAsync(BHList.SetHtml, this.Selector, html);
-        }
+        public void SetHtml(string html) => _runtime.InvokeVoidAsync(BHList.SetHtml, this.Selector, html);
 
-        public void SetText(string text)
-        {
-            Console.WriteLine($"setting {Selector} => {text}");
-            _runtime.InvokeVoidAsync(BHList.SetText, this.Selector, text);   
-        }
+        public void SetText(string text) => _runtime.InvokeVoidAsync(BHList.SetText, this.Selector, text);   
         public void SetVal(string text) => _runtime.InvokeVoidAsync(BHList.SetVal, this.Selector, text);
         public void SetAtrr(string attr, string value) => _runtime.InvokeVoidAsync(BHList.SetAttr, this.Selector, attr, value);
         public void SetCss(string property, string value) => _runtime.InvokeVoidAsync(BHList.SetCss, this.Selector, property, value);
