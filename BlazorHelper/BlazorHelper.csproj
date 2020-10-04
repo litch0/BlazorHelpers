@@ -1,11 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk.Razor">
 
     <PropertyGroup>
-        <PackageId>BlazorHelper</PackageId>
+        <PackageId>litch0.BlazorHelper</PackageId>
         <Version>1.0.0</Version>
         <Authors>litch0|lmtr</Authors>
         <PackageProjectUrl>https://github.com/litch0/BlazorHelpers</PackageProjectUrl>
-        <PackageLicenseUrl>https://github.com/litch0/BlazorHelpers/blob/main/LICENSE</PackageLicenseUrl>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <Copyright>Copyright (c) 2020 litch0|lmtr</Copyright>
         <PackageTags>Blazor;Javascript;JavascriptInterop</PackageTags>
         <Description>
