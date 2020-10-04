@@ -1,5 +1,5 @@
 # BlazorHelpers
-Helpers to interact with javascript apis with blazor
+Helpers to interact with javascript apis using blazor
 
 ## Documentation Here
 [Go to Documentation](https://github.com/litch0/BlazorHelpers/wiki)
