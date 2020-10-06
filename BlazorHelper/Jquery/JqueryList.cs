@@ -1,6 +1,6 @@
 namespace BlazorHelper
 {
-    public class BHList
+    public class JqueryList
     {
         private const string BaseString = "BH.";
 

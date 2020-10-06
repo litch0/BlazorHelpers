@@ -4,22 +4,20 @@ window.DOMHelper = {
     GetLocalStorage(key){return localStorage.getItem(key);},
 
     // Cookies
-    SetCookie(key, val, hoursToExpire){setCookie(key, val, hoursToExpire)},
+    SetCookie(key, val, hoursToExpire, domain){setCookie(key, val, hoursToExpire, domain)},
     GetCookie(name){return getCookie(name)},
 
     // Session Storage
     SetSessionStorage(key, val){sessionStorage.setItem(key, val);},
     GetSessionStorage(key){return sessionStorage.getItem(key);},
     
-    
-    // TODO: Implement
-    GetNaviGeoLocal() {},
-    GetNaviOnline() {},
-    GetUserAgent() {},
+    // navigator
+    GetNaviGeoLocal() {return navigator.geolocation().toString()},
+    GetNaviOnline() { return navigator.onLine},
+    GetUserAgent() {return navigator.userAgent.toString()},
 }
 
-function setCookie(cname,cvalue,hours) {
-    let domain = ".localhost"; // TODO: Change in production
+function setCookie(cname,cvalue,hours, domain) {
     let d = new Date();
     d.setTime(d.getTime() + (hours*60*60*1000));
     let expires = "expires=" + d.toGMTString();
