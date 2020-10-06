@@ -1,18 +1,18 @@
 # BlazorHelpers
-Helpers to interact with javascript apis with blazor
+Helpers to interact with javascript apis using blazor
 
 ## Documentation Here
-[Go to Documentation]()
+[Go to Documentation](https://github.com/litch0/BlazorHelpers/wiki)
 
 ## instalation
-Nuguet: 
+[Nuguet](https://www.nuget.org/packages/BlazorHelper/)
 
 ## How to use?
 in the `_layour.cshtml` or `index.html` add the following scripts depending on what you want to do:
 ```HTML
-<script src="_content/BlazorQuery/jquery-3.5.1.min.js"></script> <!--If you want to use Jquery functions this needs to be first-->
-<script src="_content/BlazorQuery/JqueryInterop.js"></script> <!--If you want to use Jquery-->
-<script src="_content/BlazorQuery/DOM.js" ></script> <!--if you want to use Cookies, sessionStorage, localStorage, navigator apis, etc-->
+<script src="_content/litch0.BlazorHelper/jquery-3.5.1.min.js"></script> <!--If you want to use Jquery functions this needs to be first-->
+<script src="_content/litch0.BlazorHelper/JqueryInterop.js"></script> <!--If you want to use Jquery-->
+<script src="_content/litch0.BlazorHelper/DOM.js" ></script> <!--if you want to use Cookies, sessionStorage, localStorage, navigator apis, etc-->
 ```
 
 in the component you want to use
