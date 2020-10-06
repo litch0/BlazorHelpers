@@ -2,14 +2,14 @@
 
     <PropertyGroup>
         <PackageId>BlazorHelper</PackageId>
-        <Version>1.0.2</Version>
+        <Version>1.0.3</Version>
         <Authors>litch0|lmtr</Authors>
         <PackageProjectUrl>https://github.com/litch0/BlazorHelpers</PackageProjectUrl>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <Copyright>Copyright (c) 2020 litch0|lmtr</Copyright>
         <PackageTags>Blazor;Javascript;JavascriptInterop</PackageTags>
         <Description>
-This client library enables working with Jquery and the DOM with Blazor in a modular way see more in https://github.com/litch0 BlazorHelpers
+This client library enables working with Jquery and the DOM with Blazor in a modular way see more in https://github.com/litch0/BlazorHelpers
 you can choose to work with Jquery and DOM individually or in groups using both
 This library can be used for example to add elements to a div without additions to a list (only text in html) see more in the example of the repo: https://github.com/litch0/BlazorHelpers
         </Description>
