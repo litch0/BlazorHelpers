@@ -12,7 +12,7 @@ in the `_layour.cshtml` or `index.html` add the following scripts depending on w
 ```HTML
 <script src="_content/BlazorHelper/jquery-3.5.1.min.js"></script> <!--If you want to use Jquery functions this needs to be first-->
 <script src="_content/BlazorHelper/JqueryInterop.js"></script> <!--If you want to use Jquery-->
-<script src="_content/BlazorHelper/DOM.js" ></script> <!--if you want to use Cookies, sessionStorage, localStorage, navigator apis, etc-->
+<script src="_content/BlazorHelper/DOMInterop.js" ></script> <!--if you want to use Cookies, sessionStorage, localStorage, navigator apis, etc-->
 ```
 
 in the component you want to use
