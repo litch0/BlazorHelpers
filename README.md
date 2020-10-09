@@ -9,6 +9,22 @@ Helpers to interact with javascript apis using blazor
 
 ## How to use?
 ### JQuery
+in program.cs
+```C#
+public static async Task Main(string[] args)
+{
+    var builder = WebAssemblyHostBuilder.CreateDefault(args);
+    builder.RootComponents.Add<App>("app");
+        
+    builder.Services
+        .AddJquery() // to use Jquery
+        .AddDOMHelper() // To use DOM
+        .AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+
+await builder.Build().RunAsync();
+}
+```
+
 in the `_layour.cshtml` or `index.html` add the following scripts:
 ```HTML
 <script src="_content/BlazorHelper/jquery-3.5.1.min.js"></script>
