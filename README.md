@@ -17,9 +17,11 @@ in the `_layour.cshtml` or `index.html` add the following scripts:
 
 in the component you want to use
 ```CSHTML
+@inject Jquery Jquery
+
 // Jquery methods are not available on Initialize Functions
 protected override Task OnAfterRenderAsync(bool firstRender)
-    {
+{
     if (firstRender)
     {    
         new JObject("#H").SetCss("color", "red");
@@ -36,6 +38,8 @@ in the `_layour.cshtml` or `index.html` add the following scripts:
 
 in the component you want to use
 ```CSHTML
+@inject DOMHelper Dom
+
 protected override async Task OnInitializedAsync()
 {
     await base.OnInitializedAsync();
