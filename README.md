@@ -9,7 +9,7 @@ Helpers to interact with javascript apis using blazor
 
 ## How to use?
 ### JQuery
-in the `_layour.cshtml` or `index.html` add the following scripts depending on what you want to do:
+in the `_layour.cshtml` or `index.html` add the following scripts:
 ```HTML
 <script src="_content/BlazorHelper/jquery-3.5.1.min.js"></script>
 <script src="_content/BlazorHelper/JqueryInterop.js"></script>
@@ -29,7 +29,7 @@ protected override Task OnAfterRenderAsync(bool firstRender)
 ```
 
 ### DOM
-in the `_layour.cshtml` or `index.html` add the following scripts depending on what you want to do:
+in the `_layour.cshtml` or `index.html` add the following scripts:
 ```HTML
 <script src="_content/BlazorHelper/DOMInterop.js"></script>
 ```
