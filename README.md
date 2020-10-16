@@ -8,49 +8,57 @@ Helpers to interact with javascript apis using blazor
 [Nuguet](https://www.nuget.org/packages/BlazorHelper/)
 
 ## How to use?
-in the `_layour.cshtml` or `index.html` add the following scripts depending on what you want to do:
+### JQuery
+in program.cs
+```C#
+public static async Task Main(string[] args)
+{
+    var builder = WebAssemblyHostBuilder.CreateDefault(args);
+    builder.RootComponents.Add<App>("app");
+        
+    builder.Services
+        .AddJquery() // to use Jquery
+        .AddDOMHelper(builder.HostEnvironment.BaseAddress) // To use DOM
+        .AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+
+await builder.Build().RunAsync();
+}
+```
+
+in the `_layour.cshtml` or `index.html` add the following scripts:
 ```HTML
-<script src="_content/litch0.BlazorHelper/jquery-3.5.1.min.js"></script> <!--If you want to use Jquery functions this needs to be first-->
-<script src="_content/litch0.BlazorHelper/JqueryInterop.js"></script> <!--If you want to use Jquery-->
-<script src="_content/litch0.BlazorHelper/DOM.js" ></script> <!--if you want to use Cookies, sessionStorage, localStorage, navigator apis, etc-->
+<script src="_content/BlazorHelper/jquery-3.5.1.min.js"></script>
+<script src="_content/BlazorHelper/JqueryInterop.js"></script>
 ```
 
 in the component you want to use
 ```CSHTML
-@inject IJSRuntime JsRun <!--DO NOT FORGET THIS-->
+@inject Jquery Jquery
 
-<p>Welcome to your new app.</p>
-<div id="mycustomIdSuperCool" style="overflow: auto; height: 100px; width: 100%; background: #1861ac;">
-</div>
-
-
-<button class="btn btn-secondary"  @onclick=" e => AddElements()" >Add Elements by adding to list</button><br/>
-<button class="btn btn-primary"    @onclick="() => Empty()" >Hide</button>
-@code
+// Jquery methods are not available on Initialize Functions
+protected override Task OnAfterRenderAsync(bool firstRender)
 {
-    JObject div;
-
-    protected override void OnInitialized()
-    {
-        base.OnInitialized();
-        div = new JObject(JsRun, $"#mycustomIdSuperCool");
-        div.SetCss("background", "black");
-        JsRun.InvokeVoidAsync("TestRuntime", "OnInitialized");
+    if (firstRender)
+    {    
+        new JObject("#H").SetCss("color", "red");
     }
-
-    void AddElements()
-    {
-        for (int i = 0; i < 1000; i++)
-        {    //         div.CreateElement("ELEMENTNAME", UNIQUEID);
-            JObject j = div.CreateElement("p", Guid.NewGuid().ToString()); // Note that this elements are created in the parrent element so you don't need to add them
-        }
-    }
-
-    void Hide() => div.Hide();
-
-    void Show() => div.Show();
-
-    void Empty() => div.empty();
+    return base.OnAfterRenderAsync(firstRender);
 }
 ```
-Look that wen referencing elements from the DOM you need to reference it on `OnInitialized()` after `base.OnInitialized();` because before that the JSRuntime is not available
+
+### DOM
+in the `_layour.cshtml` or `index.html` add the following scripts:
+```HTML
+<script src="_content/BlazorHelper/DOMInterop.js"></script>
+```
+
+in the component you want to use
+```CSHTML
+@inject DOMHelper Dom
+
+protected override async Task OnInitializedAsync()
+{
+    await base.OnInitializedAsync();
+    await Dom.SetLocalStorage("hello", "secondHello");
+}
+```
