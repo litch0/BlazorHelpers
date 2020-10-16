@@ -2,23 +2,25 @@ using System;
 using System.IO;
 using Microsoft.JSInterop;
 
-namespace BlazorHelper
+namespace BlazorHelper.Jquery
 {
     public class JObject
     {
-        private IJSRuntime  _runtime;
-        public  string      Selector;
+        private IJSRuntime _runtime = Jquery.Runtime;
+        public  string     Selector;
 
-        public JObject(IJSRuntime runtime, string selector)
+        public JObject(string selector)
         {
-            _runtime = runtime;
+            _runtime.InvokeVoidAsync("Test");
+            if(_runtime == null)
+                throw new NullReferenceException("You must add Jquery to your serivces");
             Selector = selector;
         }
 
         public JObject CreateElement(string elementName, string id)
         {
             _runtime.InvokeVoidAsync(JqueryList.CreateElement, this.Selector, id);
-            return new JObject(_runtime, id);
+            return new JObject(id);
         } 
         
         public string GetHtml() => _runtime.InvokeAsync<string>(JqueryList.Html, this.Selector).Result;

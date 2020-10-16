@@ -1,4 +1,4 @@
-namespace BlazorHelper
+namespace BlazorHelper.Jquery
 {
     public class JqueryList
     {

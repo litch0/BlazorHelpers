@@ -13,5 +13,8 @@ namespace BlazorHelper.DOM
         public static readonly string GetNaviGeoLocal    = $"{BaseName}GetNaviGeoLocal";
         public static readonly string GetNaviOnline      = $"{BaseName}GetNaviOnline";
         public static readonly string GetUserAgent       = $"{BaseName}GetUserAgent";
+
+        public static readonly string AddScript          = $"{BaseName}AddScript";
+        public static readonly string AddStyle           = $"{BaseName}AddStyle";
     }
 }

@@ -15,6 +15,10 @@ window.DOMHelper = {
     GetNaviGeoLocal() {return navigator.geolocation().toString()},
     GetNaviOnline() { return navigator.onLine},
     GetUserAgent() {return navigator.userAgent.toString()},
+    AddScript(pathToScript) { let scrpt = document.createElement("script"); scrpt.src = pathToScript; document.head.append(scrpt); },
+    AddStyle(pathToStylesheet) {var link = document.createElement("link"); link.type = "text/css"; link.rel = "stylesheet"; link.href = pathToStylesheet; document.head.append(link);},
+    Test() {console.log("DOM: hello")}
+    
 }
 
 function setCookie(cname,cvalue,hours, domain) {

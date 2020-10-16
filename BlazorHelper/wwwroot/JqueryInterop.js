@@ -45,4 +45,5 @@ window.BH = {
 
     //Animate: (elementSelector, params) => { $(elementSelector).animate(JSON.parse(params)) },
     CallJqueryFunc: (elementSelector, funcName, ...args) => $(elementSelector)[funcName](args),
+    Test: () => console.log("Hello wolrd"),
 }
