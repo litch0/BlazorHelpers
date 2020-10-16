@@ -8,6 +8,7 @@ Helpers to interact with javascript apis using blazor
 [Nuguet](https://www.nuget.org/packages/BlazorHelper/)
 
 ## How to use?
+You can see the [Test app](https://github.com/litch0/BlazorHelpers/tree/main/blazorHelperTest) to get inspiration 
 ### JQuery
 in program.cs
 ```C#
@@ -18,7 +19,7 @@ public static async Task Main(string[] args)
         
     builder.Services
         .AddJquery() // to use Jquery
-        .AddDOMHelper(builder.HostEnvironment.BaseAddress) // To use DOM
+        .AddDOMHelper() // To use DOM
         .AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
 await builder.Build().RunAsync();
