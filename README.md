@@ -8,6 +8,7 @@ Helpers to interact with javascript apis using blazor
 [Nuguet](https://www.nuget.org/packages/BlazorHelper/)
 
 ## How to use?
+You can see the [Test app](https://github.com/litch0/BlazorHelpers/tree/main/blazorHelperTest) to get inspiration 
 ### JQuery
 in program.cs
 ```C#
