@@ -18,7 +18,7 @@ public static async Task Main(string[] args)
         
     builder.Services
         .AddJquery() // to use Jquery
-        .AddDOMHelper(builder.HostEnvironment.BaseAddress) // To use DOM
+        .AddDOMHelper() // To use DOM
         .AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
 await builder.Build().RunAsync();
