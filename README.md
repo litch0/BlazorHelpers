@@ -1,6 +1,9 @@
 # BlazorHelpers
 Helpers to interact with javascript apis using blazor
 
+## Next Plan
+Add Support for Bootstrap 5 with callbacks for events. see the [Bootstrap Branch](https://github.com/litch0/BlazorHelpers/tree/BootstrapSupport) to track progress.  
+
 ## Documentation Here
 [Go to Documentation](https://github.com/litch0/BlazorHelpers/wiki)
 
