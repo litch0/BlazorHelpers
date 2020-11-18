@@ -1,12 +1,14 @@
 ﻿@page "/"
 
+@inject Jquery j
+
 <h1>Hello, world!</h1>
 
 <div id="hello"></div>
 
 Welcome to your new app.
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+
 @code{
     protected override async Task OnInitializedAsync()
     {
@@ -19,13 +21,17 @@ Welcome to your new app.
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         await base.OnAfterRenderAsync(firstRender);
-        JObject e = new JObject("#hello");
-        e.AddHtml("<p id=\"TestObject\">Hello, I was added by c# code. I must have:<br> + Red Color<br> + Background Color yellow<br> + font-size 24px</p>");
-        JObject f = new JObject("#TestObject");
-        f.SetCss("background-color", "yellow");
-        f.SetCss("font-size", "24px");
-        f.SetCss("color", "red");
-        Console.WriteLine("DONE WITH JQUERY");
+        if(firstRender)
+        {
+            JObject e = new JObject("#hello");
+            await e.AddHtml("<p id=\"TestObject\">Hello, I was added by c# code. I must have:<br> + Red Color<br> + Background Color yellow<br> + font-size 24px</p>");
+            JObject f = new JObject("#TestObject");
+            await f.SetCss("background-color", "yellow");
+            await f.SetCss("font-size", "24px");
+            await f.SetCss("color", "red");
+            System.Console.WriteLine($"Hello value: {await f.GetText()}");
+            Console.WriteLine("DONE WITH JQUERY");
+        }
     }
 
 }

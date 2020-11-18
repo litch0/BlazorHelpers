@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using System.IO;
 using Microsoft.JSInterop;
 
@@ -23,38 +24,37 @@ namespace BlazorHelper.Jquery
             return new JObject(id);
         } 
         
-        public string GetHtml() => _runtime.InvokeAsync<string>(JqueryList.Html, this.Selector).Result;
-        public string GetText() => _runtime.InvokeAsync<string>(JqueryList.Text, this.Selector).Result;
-        public string GetVal() => _runtime.InvokeAsync<string>(JqueryList.Val, this.Selector).Result;
-        public string GetAttr(string attr) => _runtime.InvokeAsync<string>(JqueryList.Attr, this.Selector, attr).Result;
-        public string GetCss(string property) => _runtime.InvokeAsync<string>(JqueryList.Css, this.Selector, property).Result;
+        public async Task<string> GetText() => await _runtime.InvokeAsync<string>(JqueryList.Text, this.Selector);
+        public async Task<string> GetHtml() => await  _runtime.InvokeAsync<string>(JqueryList.Html, this.Selector);
+        public async Task<string> GetVal() => await _runtime.InvokeAsync<string>(JqueryList.Val, this.Selector);
+        public async Task<string> GetAttr(string attr) => await _runtime.InvokeAsync<string>(JqueryList.Attr, this.Selector, attr);
+        public async Task<string> GetCss(string property) => await _runtime.InvokeAsync<string>(JqueryList.Css, this.Selector, property);
 
-        public void SetHtml(string html) => _runtime.InvokeVoidAsync(JqueryList.SetHtml, this.Selector, html);
+        public async Task SetHtml(string html) => await _runtime.InvokeVoidAsync(JqueryList.SetHtml, this.Selector, html);
+        public async Task SetText(string text) => await _runtime.InvokeVoidAsync(JqueryList.SetText, this.Selector, text);   
+        public async Task SetVal(string text) => await _runtime.InvokeVoidAsync(JqueryList.SetVal, this.Selector, text);
+        public async Task SetAtrr(string attr, string value) => await _runtime.InvokeVoidAsync(JqueryList.SetAttr, this.Selector, attr, value);
+        public async Task SetCss(string property, string value) => await _runtime.InvokeVoidAsync(JqueryList.SetCss, this.Selector, property, value);
 
-        public void SetText(string text) => _runtime.InvokeVoidAsync(JqueryList.SetText, this.Selector, text);   
-        public void SetVal(string text) => _runtime.InvokeVoidAsync(JqueryList.SetVal, this.Selector, text);
-        public void SetAtrr(string attr, string value) => _runtime.InvokeVoidAsync(JqueryList.SetAttr, this.Selector, attr, value);
-        public void SetCss(string property, string value) => _runtime.InvokeVoidAsync(JqueryList.SetCss, this.Selector, property, value);
+        public async Task Add(string element) => await _runtime.InvokeVoidAsync(JqueryList.Add, this.Selector, element);
+        public async Task Add(JObject element) => await _runtime.InvokeVoidAsync(JqueryList.Add, this.Selector, element.Selector);
+        public async Task AddHtml(string html) => await  _runtime.InvokeVoidAsync(JqueryList.AddHtml, this.Selector, html);
 
-        public void Add(string element) => _runtime.InvokeVoidAsync(JqueryList.Add, this.Selector, element);
-        public void Add(JObject element) => _runtime.InvokeVoidAsync(JqueryList.Add, this.Selector, element.Selector);
-        public void AddHtml(string html) => _runtime.InvokeVoidAsync(JqueryList.AddHtml, this.Selector, html);
+        public async Task Remove(string id) => await _runtime.InvokeVoidAsync(JqueryList.RemoveChild, Selector, id);
+        public async Task Remove() => _runtime.InvokeVoidAsync(JqueryList.Remove, this.Selector);
+        public async Task Show() => await _runtime.InvokeVoidAsync(JqueryList.Show, this.Selector);
+        public async Task Hide() => await _runtime.InvokeVoidAsync(JqueryList.Hide, Selector);
 
-        public void Remove(string id) => _runtime.InvokeVoidAsync(JqueryList.RemoveChild, Selector, id);
-        public void Remove() => _runtime.InvokeVoidAsync(JqueryList.Remove, this.Selector);
-        public void Show() => _runtime.InvokeVoidAsync(JqueryList.Show, this.Selector);
-        public void Hide() => _runtime.InvokeVoidAsync(JqueryList.Hide, Selector);
-
-        public void FadeIn(int speed) => _runtime.InvokeVoidAsync(JqueryList.FadeIn, this.Selector, speed);
-        public void FadeIn(string speed) => _runtime.InvokeVoidAsync(JqueryList.FadeIn, this.Selector, speed);
+        public async Task FadeIn(int speed) => await _runtime.InvokeVoidAsync(JqueryList.FadeIn, this.Selector, speed);
+        public async Task FadeIn(string speed) => await _runtime.InvokeVoidAsync(JqueryList.FadeIn, this.Selector, speed);
         
-        public void FadeOut(string speed) => _runtime.InvokeVoidAsync(JqueryList.FadeOut, this.Selector, speed);
-        public void FadeOut(int speed) => _runtime.InvokeVoidAsync(JqueryList.FadeOut, this.Selector, speed);
+        public async Task FadeOut(string speed) => await _runtime.InvokeVoidAsync(JqueryList.FadeOut, this.Selector, speed);
+        public async Task FadeOut(int speed) => await _runtime.InvokeVoidAsync(JqueryList.FadeOut, this.Selector, speed);
         
-        public void FadeToggle(string speed) => _runtime.InvokeVoidAsync(JqueryList.FadeToggle, this.Selector, speed);
-        public void FadeToggle(int speed) => _runtime.InvokeVoidAsync(JqueryList.FadeToggle, this.Selector, speed);
+        public async Task FadeToggle(string speed) => await _runtime.InvokeVoidAsync(JqueryList.FadeToggle, this.Selector, speed);
+        public async Task FadeToggle(int speed) =>  await _runtime.InvokeVoidAsync(JqueryList.FadeToggle, this.Selector, speed);
         
-        public void FadeTo(string speed, float opacity) => _runtime.InvokeVoidAsync(JqueryList.FadeTo, this.Selector, speed, opacity);
-        public void FadeTo(int speed, float opacity) => _runtime.InvokeVoidAsync(JqueryList.FadeTo, this.Selector, speed, opacity);
+        public async Task FadeTo(string speed, float opacity) => await _runtime.InvokeVoidAsync(JqueryList.FadeTo, this.Selector, speed, opacity);
+        public async Task FadeTo(int speed, float opacity) => await _runtime.InvokeVoidAsync(JqueryList.FadeTo, this.Selector, speed, opacity);
     }
 }
