@@ -41,7 +41,7 @@ namespace BlazorHelper.Jquery
         public async Task AddHtml(string html) => await  _runtime.InvokeVoidAsync(JqueryList.AddHtml, this.Selector, html);
 
         public async Task Remove(string id) => await _runtime.InvokeVoidAsync(JqueryList.RemoveChild, Selector, id);
-        public async Task Remove() => _runtime.InvokeVoidAsync(JqueryList.Remove, this.Selector);
+        public async Task Remove() => await _runtime.InvokeVoidAsync(JqueryList.Remove, this.Selector);
         public async Task Show() => await _runtime.InvokeVoidAsync(JqueryList.Show, this.Selector);
         public async Task Hide() => await _runtime.InvokeVoidAsync(JqueryList.Hide, Selector);
 
