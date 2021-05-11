@@ -1,3 +1,5 @@
 language: csharp
 mono: none
-solution: BlazorHelpers.sln
+dotnet: 5.1
+script:
+  - dotnet build
