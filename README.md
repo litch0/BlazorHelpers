@@ -1,4 +1,4 @@
-# BlazorHelpers
+# BlazorHelpers [![Build Status](https://travis-ci.com/litch0/BlazorHelpers.svg?branch=main)](https://travis-ci.com/litch0/BlazorHelpers)
 Helpers to interact with javascript apis using blazor
 
 ## Next Plan
